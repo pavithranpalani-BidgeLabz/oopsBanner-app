@@ -1,15 +1,19 @@
 package org.example;
 
-
 public class OOPSBannerApp {
     public static void main(String[] args) {
-        System.out.println(String.join(" ", "   ******    ", "   ******    ", " ********   ", "   ******   "));
-        System.out.println(String.join(" ", " **      **  ", " **      **  ", " **      **  ", " **      **  "));
-        System.out.println(String.join(" ", "**        ** ", "**        ** ", " **      **  ", " **          "));
-        System.out.println(String.join(" ", "**        ** ", "**        ** ", " ********    ", "   ******    "));
-        System.out.println(String.join(" ", "**        ** ", "**        ** ", " **          ", "          ** "));
-        System.out.println(String.join(" ", " **      **  ", " **      **  ", " **          ", " **      **  "));
-        System.out.println(String.join(" ", "   ******    ", "   ******    ", " **          ", "   ******    "));
+        String[] ar={
+                String.join(" ", "   ******    ", "   ******    ", " ********   ", "   ******   "),
+                String.join(" ", " **      **  ", " **      **  ", " **      **  ", " **      **  "),
+                String.join(" ", "**        ** ", "**        ** ", " **      **  ", " **          "),
+                String.join(" ", "**        ** ", "**        ** ", " ********    ", "   ******    "),
+                String.join(" ", "**        ** ", "**        ** ", " **          ", "          ** "),
+                String.join(" ", " **      **  ", " **      **  ", " **          ", " **      **  "),
+                String.join(" ", "   ******    ", "   ******    ", " **          ", "   ******    ")
+        };
+        for(String s:ar){
+            System.out.println(s);
+        }
 
     }
 }

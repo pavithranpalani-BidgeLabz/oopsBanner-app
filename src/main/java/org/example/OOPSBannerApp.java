@@ -1,12 +1,9 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class OOPSBannerApp {
-    public static void main(String[] args) {
-        String str="OOPS";
 
-        String O[]={
+    public static String[] getOpattern(){
+        return new String[]{
                 "   ******    ",
                 " **      **  ",
                 "**        ** ",
@@ -15,7 +12,9 @@ public class OOPSBannerApp {
                 " **      **  ",
                 "   ******    "
         };
-        String[] P={
+    }
+    public static String[] getPpatter(){
+        return new String[]{
                 " ********    ",
                 " **      **  ",
                 " **      **  ",
@@ -24,8 +23,10 @@ public class OOPSBannerApp {
                 " **          ",
                 " **          "
         };
+    }
 
-        String[] S={
+    public static String[] getSpattern(){
+        return new String[]{
                 "   ******    ",
                 " **      **  ",
                 " **          ",
@@ -34,20 +35,12 @@ public class OOPSBannerApp {
                 " **      **  ",
                 "   ******    "
         };
+    }
+    public static void main(String[] args) {
+        String[] Opattern=getOpattern();
 
-        for(int i=0;i<7;i++){
-            for(char ch:str.toCharArray()){
-                if(ch=='O'){
-                    System.out.print(O[i]);
-                }
-                else if(ch=='P'){
-                    System.out.print(P[i]);
-                }
-                else if(ch=='S'){
-                    System.out.print(S[i]);
-                }
-            }
-            System.out.println();
+        for(int i=0;i<Opattern.length;i++){
+            System.out.println(Opattern[i]+" "+Opattern[i]+" "+getPpatter()[i]+" "+getSpattern()[i]);
         }
 
     }

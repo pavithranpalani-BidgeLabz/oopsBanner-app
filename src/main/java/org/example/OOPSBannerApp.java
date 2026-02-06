@@ -1,50 +1,20 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
-    static class  CharacterPatternMap{
-        private char character;
-        private String[] pattern;
-
-        public char getCharacter() {
-            return character;
-        }
-
-        public void setCharacter(char character) {
-            this.character = character;
-        }
-
-        public String[] getPattern() {
-            return pattern;
-        }
-
-        public void setPattern(String[] pattern) {
-            this.pattern = pattern;
-        }
-
-        public CharacterPatternMap(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
-
-
-    }
-    public static void main(String[] args) {
-
-        String str="OOPS";
-
-        CharacterPatternMap[] OOPSpattern = {
-                new CharacterPatternMap(
-                        'O', new String[]{
-                        "   ******    ",
-                        " **      **  ",
-                        "**        ** ",
-                        "**        ** ",
-                        "**        ** ",
-                        " **      **  ",
-                        "   ******    "
-                }),new CharacterPatternMap('P',new String[]{
+    static HashMap<Character,String[]> createMap(){
+        HashMap<Character,String[]> charMap = new HashMap<>();
+        charMap.put('O',new String[]{
+                "   ******    ",
+                " **      **  ",
+                "**        ** ",
+                "**        ** ",
+                "**        ** ",
+                " **      **  ",
+                "   ******    "});
+        charMap.put('P',new String[]{
                 " ********    ",
                 " **      **  ",
                 " **      **  ",
@@ -52,7 +22,8 @@ public class OOPSBannerApp {
                 " **          ",
                 " **          ",
                 " **          "
-        }),new CharacterPatternMap('S',new String[]{
+        });
+        charMap.put('S',new String[]{
                 "   ******    ",
                 " **      **  ",
                 " **          ",
@@ -60,18 +31,24 @@ public class OOPSBannerApp {
                 "          ** ",
                 " **      **  ",
                 "   ******    "
-        })
-        };
+        });
+        return  charMap;
+    }
+
+    public static void displayBanner(HashMap<Character,String[]> charMap,String message ){
         for(int i=0;i<7;i++){
-            StringBuilder builder=new StringBuilder();
-            for(CharacterPatternMap pattern:OOPSpattern){
-                for(char ch:str.toCharArray()){
-                    if(pattern.getCharacter()==ch){
-                        builder.append(pattern.getPattern()[i]);
-                    }
+            StringBuilder builder = new StringBuilder();
+            for(char c:message.toCharArray()){
+                if(charMap.containsKey(c)){
+                    builder.append(charMap.get(c)[i]);
                 }
             }
             System.out.println(builder.toString());
         }
+    }
+    public static void main(String[] args) {
+        HashMap<Character,String[]> charMap = createMap();
+        String str="OOPS";
+        displayBanner(charMap,str);
     }
 }
